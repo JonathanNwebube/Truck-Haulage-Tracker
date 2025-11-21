@@ -175,5 +175,19 @@ project/
 - Google Maps integration for haulage routes  
 - Manager analytics dashboard
 
+## 📄 Full Documentation
+
+For detailed information about the planning, development, testing and evaluation of this project, a full **186-page NEA document** is included in this repository:
+
+👉 [Download NEA Documentation (NEA.docx)](./NEA.docx)
+
+This document contains:
+- full analysis and investigation  
+- design diagrams and structure charts  
+- pseudocode  
+- screenshots  
+- testing tables  
+- evaluation & reflection  
+- references and appendices  
 
 
