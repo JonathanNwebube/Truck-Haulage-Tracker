@@ -180,7 +180,7 @@ project/
 
 For detailed information about the planning, development, testing and evaluation of this project, a full **186-page NEA document** is included in this repository:
 
-👉 [Download NEA Documentation (NEA.docx)](./NEA.docx)
+👉 [Download NEA Documentation (NEA.docx)](./NEA.pdf)
 
 This document contains:
 - full analysis and investigation  
