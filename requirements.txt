@@ -1,0 +1,9 @@
+Flask
+Flask-SQLAlchemy
+Flask-Login
+Werkzeug
+itsdangerous
+Jinja2
+click
+MarkupSafe
+SQLAlchemy
