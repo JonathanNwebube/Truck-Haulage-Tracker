@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Edit Schedules{% endblock %} {% block content %} 
+
+<form method="POST">
+    <h3 align="center"> Edit Schedules</h3>
+    <br>
+
+ 
+    <!-- This is what made the ugly list of drivers -->
+
+    <h5 align="center">Choose Driver</h5>
+    <ul class="'list-group list-group-flush" id="drivers">
+        {% for driver in drivers %}
+        <li class="list-group-item">
+          {{ driver }}
+        </li>
+        {% endfor %}
+    </ul>
+        <br>
+      
+    <!-- Having to manually enter all the weekdays instead of using an array and using less lines -->
+
+        <div class = "form-group">
+            <label for="weekdays">Weekday:</label>
+            <select name="weekday" id="weekdays">
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+        </div>
+</form>
+
+{% endblock %}
