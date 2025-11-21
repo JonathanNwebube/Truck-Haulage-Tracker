@@ -39,4 +39,140 @@ The platform is designed to help haulage companies prevent breaches of EU/AETR l
 ---
 
 ## 📷 Screenshots
-<table> <tr> <td align="center"> <img src="screenshots/login.jpg" width="500"><br> <sub>Login Page</sub> </td> <td align="center"> <img src="screenshots/account-creation.jpg" width="500"><br> <sub>Account Creation</sub> </td> </tr> <tr> <td align="center"> <img src="screenshots/manager-dashboard.jpg" width="500"><br> <sub>Manager Dashboard</sub> </td> <td align="center"> <img src="screenshots/schedule-dashboard.jpg" width="500"><br> <sub>Driver Dashboard</sub> </td> </tr> <tr> <td align="center"> <img src="screenshots/adding-schedule.jpg" width="500"><br> <sub>Add Schedule</sub> </td> <td align="center"> <img src="screenshots/AETR-Laws.jpg" width="500"><br> <sub>AETR Driving Laws</sub> </td> </tr> </table>
+
+<table>
+  <tr>
+    <td align="center">
+      <img src="screenshots/login.jpg" width="500"><br>
+      <sub>Login Page</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/account-creation.jpg" width="500"><br>
+      <sub>Account Creation</sub>
+    </td>
+  </tr>
+  
+  <tr>
+    <td align="center">
+      <img src="screenshots/manager-dashboard.jpg" width="500"><br>
+      <sub>Manager Dashboard</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/schedule-dashboard.jpg" width="500"><br>
+      <sub>Driver Dashboard</sub>
+    </td>
+  </tr>
+
+  <tr>
+    <td align="center">
+      <img src="screenshots/adding-schedule.jpg" width="500"><br>
+      <sub>Add Schedule</sub>
+    </td>
+    <td align="center">
+      <img src="screenshots/AETR-Laws.jpg" width="500"><br>
+      <sub>AETR Driving Laws</sub>
+    </td>
+  </tr>
+</table>
+
+---
+
+## 🛠️ Installation & Setup
+
+1. Clone the repository:
+   ```bash
+   git clone <your-repo-url>
+   ```
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Start the Flask development server:
+   ```bash
+   python main.py
+   ```
+4. Open your browser at:
+   ```
+   http://127.0.0.1:5000
+   ```
+
+---
+
+## 📁 Project Structure
+
+```
+project/
+│── main.py
+│── README.md
+│── Psuedo.txt
+│── NEA.docx
+│
+├── screenshots/                # Images used in README
+│   ├── login.jpg
+│   ├── account-creation.jpg
+│   ├── manager-dashboard.jpg
+│   ├── schedule-dashboard.jpg
+│   ├── adding-schedule.jpg
+│   └── AETR-Laws.jpg
+│
+└── website/
+    ├── __init__.py
+    ├── backend.py             # Core Flask route handling
+    ├── database.py            # SQLAlchemy models (User, Job, Days, Week)
+    │
+    ├── static/
+    │   └── index.js           # JavaScript for front-end functionality
+    │
+    └── templates/             # HTML templates (Flask front-end)
+
+```
+
+---
+
+## 🔍 How the System Works
+
+1. **User Authentication**  
+   - Users create an account and sign in securely.  
+   - Passwords are hashed and managed by Flask-Login.  
+   - Sessions persist until logout.
+
+2. **Role-Based Access Control**  
+   - **Drivers** can only view their personal driving/rest times.  
+   - **Managers** can view & edit *all* drivers, schedules, and hours.
+
+3. **Scheduling & Driving Time Tracking**  
+   - Dates, times, tractor IDs, and start/end locations are stored in the SQL database.  
+   - Managers can edit or add schedules.  
+   - Drivers view their allocated work for the day.
+
+4. **EU & AETR Compliance Support**  
+   - Driving hours align with EU/AETR regulations.  
+   - Includes a dedicated AETR information page for driver reference.
+
+5. **Database Persistence**  
+   - SQLAlchemy ORM manages all data.  
+   - Relationships connect users → jobs → daily hours.
+
+---
+
+## 🔐 Security
+
+- Passwords hashed using secure methods (never stored in plain text).  
+- Role-based access restricts manager-only features.  
+- User-specific routes protected with Flask-Login.  
+- Inputs validated to prevent accidental data corruption.
+
+---
+
+## 🚀 Future Improvements
+**A version 2 is currently being worked on**
+
+- Automatic alerts for EU/AETR driving-time violations  
+- Weekly driving-time summaries for drivers  
+- Export schedules to PDF/CSV  
+- Driver messaging/notifications  
+- Google Maps integration for haulage routes  
+- Manager analytics dashboard
+
+
+
