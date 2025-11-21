@@ -104,6 +104,7 @@ The platform is designed to help haulage companies prevent breaches of EU/AETR l
 project/
 │── main.py
 │── README.md
+│── requirements.txt
 │── Psuedo.txt
 │── NEA.docx
 │
