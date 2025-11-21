@@ -81,7 +81,7 @@ The platform is designed to help haulage companies prevent breaches of EU/AETR l
 
 1. Clone the repository:
    ```bash
-   git clone <your-repo-url>
+   git clone https://github.com/JonathanNwebube/Truck-Haulage-Tracker
    ```
 2. Install dependencies:
    ```bash
