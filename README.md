@@ -1,6 +1,7 @@
 # Haulage Time Tracking & Scheduling System
 
 A web-based platform for tracking, managing, and scheduling truck haulage times in accordance with EU and AETR driving regulations. The system ensures that drivers and managers can monitor working hours accurately while staying compliant with legally mandated driving and rest limits.
+This project was completed as part of my Sixth Form Computer Science NEA
 
 ---
 
@@ -106,7 +107,7 @@ project/
 │── README.md
 │── requirements.txt
 │── Psuedo.txt
-│── NEA.docx
+│── NEA.pdf
 │
 ├── screenshots/                # Images used in README
 │   ├── login.jpg
