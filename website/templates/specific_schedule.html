@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}View Schedule{% endblock %} {% block content %}
+
+<br>
+<h6 align="right"><b>Today's date:</b> {{day}}</h6>
+<h6 align="right"><b>Weekday: </b> {{weekday}}</h6>
+
+<center>
+
+    <br>
+
+    <b> Schedule for {{specificDriver}} </b>
+    <br>
+
+    <ul class="list-group list-group-flush" id="Job"></ul> 
+    {% if jobLen >= 1%}
+        {% for job in jobs %}
+            <li class="list-group-item">
+                <b>Date:</b> {{job.date}} &emsp; <b>Time:</b> {{job.time}} &emsp; <b>TractorID:</b> {{job.tractorID}} &emsp; <b>Start Location:</b> {{job.start_location}} &emsp; <b>End Location:</b> {{job.end_location}} &emsp; <b> Driver:</b> {{job.user}}
+                {%if user.manager == 1%}
+                    <button type="button" class="close" onClick="deleteJob({{ job.id }})"><span aria-hidden="true">&times;</span></button>
+                {% endif %}
+            </li>
+        {% endfor %}
+    {% else %}
+        <br>
+        <br>
+        <br>
+        <h6 align = "center">No jobs added</67>
+    {% endif %}
+            
+ 
+</center>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+IF user.manager = True THEN
+    FOR Schedule = 0 to length(Schedules)
+        OUTPUT Schedule
+    next Schedule
+ELSE IF user.driver = True THEN
+    MySchedule = Query(Schedule) where Schedule.firstname = driver.firstname
+    FOR Job = 0 to length(MySchedule)
+        OUTPUT Job
+    nect Job
+ENDIF

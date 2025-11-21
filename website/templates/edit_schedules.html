@@ -1,0 +1,41 @@
+{% extends "base.html" %} {% block title %}Edit Schedules{% endblock %} {% block content %} 
+
+
+<br>
+<h6 align="right"><b>Today's date:</b> {{day}}</h6>
+<h6 align="right"><b>Weekday: </b> {{weekday}}</h6>
+
+<form method="POST">
+    <center>
+        <br>
+        <h5> Edit Schedules</h5>
+        <br>
+       
+        {% if user.manager == 1 %}
+            <h5>Driver</h5>
+            <select name="drivers">
+                {% for driver in drivers %}
+                    {% if driver.manager == 0 %}
+                        <option value="{{driver}}">{{driver.first_name}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            &emsp;<button type="submit" class="btn btn-primary">Submit</button>
+
+        {% else %}
+            <b>Contact Manager to edit your schedule</b>
+            <br>
+            <br>
+            <ul class="list-group list-group-flush" id="Job"></ul>
+            {% for job in user.jobs %}
+            <li class="list-group-item">    
+                <b>Date:</b> {{job.date}} &emsp; <b>Time:</b> {{job.time}} &emsp; <b>TractorID:</b> {{job.tractorID}} &emsp; <b>Start Location:</b> {{job.start_location}} &emsp; <b>End Location:</b> {{job.end_location}} &emsp; <b> Driver:</b> {{job.user}}
+            </li>
+            {% endfor %}
+        {% endif %}
+        
+    
+    </center>
+    
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}View Schedule{% endblock %} {% block content %}
+
+<br>
+<h6 align="right"><b>Today's date:</b> {{day}}</h6>
+<h6 align="right"><b>Weekday: </b> {{weekday}}</h6>    
+
+    
+    {% if user.manager == 1 %}
+    <form method="POST">
+        <h5>Select driver</h5>
+        <select name="drivers">
+            <option value="" disabled selected hidden>Select Driver</option>
+            {% for driver in drivers %}
+                {% if driver.manager == 0 %}
+                    <option value="{{driver}}">{{driver.first_name}}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        &emsp;<button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br>
+    <br>
+    <h5>Select date to view schedule</h5>
+    <form method="POST">
+        <div class = "form-group">
+            <input 
+                type="date" 
+                id ="date" 
+                name="date" 
+            />
+        </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+        <h5 align = "center">Schedule</h5>
+        <ul class="list-group list-group-flush" id="Job"></ul>
+        {% if jobLen >=1 %}
+            {% for job in jobs %}
+            <li class="list-group-item">
+                <b>Date:</b> {{job.date}} &emsp; &nbsp; 
+                <b>Time:</b> {{job.time}} &emsp; &nbsp; 
+                <b>TractorID:</b> {{job.tractorID}} &emsp; &nbsp; 
+                <b>Start Location:</b> {{job.start_location}} &emsp; &nbsp; 
+                <b>End Location:</b> {{job.end_location}} &emsp; &nbsp; 
+                <b>Driver:</b> {{job.user}}
+                <button type="button" class="close" onClick="deleteJob({{ job.id }})"><span aria-hidden="true">&times;</span></button>
+            </li>
+            {% endfor %}
+        {% else %}
+            <br>
+            <br>
+            <br>
+            <h6 align = "center">No jobs added</67>
+        {% endif %}
+        <br>
+        <br>
+       
+    
+    {% else %}
+        <br>
+        <h5 align = "center">Schedule</h5>
+        <ul class="list-group list-group-flush" id="Job"></ul>
+        {% for job in user.jobs %}
+        <li class="list-group-item">
+            <b>Date:</b> {{job.date}} &emsp; 
+            <b>Time:</b> {{job.time}} &emsp; 
+            <b>TractorID:</b> {{job.tractorID}} &emsp; 
+            <b>Start Location:</b> {{job.start_location}} &emsp; 
+            <b>End Location:</b> {{job.end_location}} &emsp; 
+            <b> Driver:</b> {{job.user}}
+        </li>
+        {% endfor %}
+    {% endif %}
+    
+{% endblock %}

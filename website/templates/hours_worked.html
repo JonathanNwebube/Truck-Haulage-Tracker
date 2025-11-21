@@ -1,0 +1,53 @@
+{% extends "base.html" %} {% block title %}Hours worked{% endblock %} {% block content %}
+
+<style>
+    input[type='number']{
+        width: 80px;
+    } 
+</style>
+
+<br>
+<h6 align="right"> <b>Today's date:</b> {{day}}</h6>
+<h6 align="right"> <b>Weekday: </b> {{weekday}}</h6> 
+<h6 align="right"> <b>Week Number: </b> {{weekNumber}}</h6> 
+<center>
+    <br>
+
+    {% if weekday == 'Sunday'%}
+        <form method = 'POST'>
+            <h5>Hours driven by {{driver}} this week</h5><br>
+            
+            <label for="monday">Monday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+            <input type="number" id="monday" name="monday" min = "0" max = "10"><br><br>
+
+            <label for="tuesday">Tuesday:   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+            <input type="number" id="tuesday" name="tuesday" min="0" max = "10"><br><br>
+
+            <label for="wednesday">Wednesday:   &nbsp;  </label>
+            <input type="number" id="wednesday" name="wednesday" min ="0" max = "10"><br><br>
+
+            <label for="thursday">Thursday: &nbsp;&nbsp;&nbsp;&nbsp;   </label>
+            <input type="number" id="thursday" name="thursday" min = "0" max ="10"><br><br>
+
+            <label for="friday">Friday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    </label>
+            <input type="number" id="friday" name="friday" min="0" max = 10><br><br>
+
+            <label for="saturday">Saturday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </label>
+            <input type="number" id="saturday" name="saturday" min = "0" max = "10"><br><br>
+
+            <label for="sunday">Sunday: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  </label>
+            <input type="number" id="sunday" name="sunday" min = "0" max = "10"><br><br>
+            
+            <button type="submit" class="btn btn-primary">Submit</button> 
+        </form>
+
+    {% else %}
+        <h5>You can only add the hours worked on Sunday</h5>
+        <h5>Please come back on Sunday!</h5>    
+    {% endif %}
+
+    
+</center>
+
+
+{% endblock %}

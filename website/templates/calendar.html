@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Add Job{% endblock %} {% block content %}
+
+<center>
+    <br>
+    <br>
+    <br>
+
+    <h5>Select date to view schedule</h5>
+    <br>
+    <form method="POST">
+        <div class = "form-group">
+            <input 
+                type="date" 
+                id ="date" 
+                name="date" 
+            />
+        </div>
+            <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+
+</center>
+
+{%endblock%}

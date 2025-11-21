@@ -1,0 +1,23 @@
+{% extends "base.html" %} {% block title %}Select driver{% endblock %} {% block content %}
+
+<h6 align ="right"> WeekNumber: {{weekNumber}} </h6>
+
+<form method = 'POST'>
+    <center>        
+        {% if user.manager == 1 %}
+            <h5>Select driver to add to their time sheet</h5>
+            <select name="drivers">
+                {% for driver in drivers %}
+                    {% if driver.manager == 0 %}
+                        <option value="{{driver}}" SELECTED>{{driver.first_name}}</option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            &emsp;<button type="submit" class="btn btn-primary">Submit</button>
+        {% else %}    
+            <h5>Manager access only!</h5>
+        {% endif %}    
+    </center>
+</form>
+
+{% endblock %}
