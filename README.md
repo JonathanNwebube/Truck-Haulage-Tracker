@@ -30,5 +30,23 @@ The platform is designed to help haulage companies prevent breaches of EU/AETR l
 - HTML / CSS 
 - Standard Python libraries for time/date handling
 
+## 📸 Screenshots
+
+### Login Page
+![Login](screenshots/login.jpg)
+
+### Account Creation Page
+![Account Creation Page](screenshots/account-creation.jpg)
+
+### Manager Dashboard
+![Manager Dashboard](screenshots/manager-dashboard.jpg)
+
+### Driver Dashboard
+![Driver Dashboard](screenshots/schedule-dashboard.jpg)
+
+### Adding Information
+![Adding Information](screenshots/adding-schedule.jpg)
+
+
 ## 📂 Project Structure
 
